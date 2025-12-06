@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sudokubybits</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <h1>sudokubybits</h1>
+
+        <section id="controls">
+            <div id="puzzle-controls">
+                <button id="btn-new">New</button>
+                <button id="btn-solve">Solve</button>
+                <button id="btn-clear">Clear</button>
+                <button id="btn-check">Check (<span id="check-left">5</span>)</button>
+            </div>
+        
+            <div id="digits">
+                <div class="digit-row" id="digit-buttons"></div>
+            </div>
+        </section>
+
+        <section id="board-wrap">
+            <div id="board" aria-label="Sudoku board"></div>
+        </section>
+
+        <section id="status">
+            <div id="message"></div>
+            <div id="hint">Click a cell then click a digit. Right now selected:
+                <span id="selected-pos">none</span></div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
