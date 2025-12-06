@@ -1,0 +1,136 @@
+:root{
+    --cell-size: 54px;
+    --gap: 2px;
+    --border-thick: 3px;
+    --accent: #35543C;
+    --bg: #FCFFEB;
+    --cell-bg: #fff;
+}
+
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+
+body{
+    background: #FFFFE5;
+    margin: 24px;
+    padding: 18px;
+    color: #222;
+}
+
+main{
+    max-width:760px;
+    margin:0 auto;
+    padding:18px;
+    background:#B7DBB6;
+    border-radius:8px;
+    box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+
+h1{margin:0 0 16px;font-size:20px;text-align:center}
+
+#controls{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
+
+#puzzle-controls button{
+    padding:8px 12px;border-radius:6px;border:1px solid #70A867;background:#82B87D;cursor:pointer;
+}
+#puzzle-controls button:hover{box-shadow:0 2px 6px rgba(0,0,0,.06)}
+
+#digits{display:flex;flex-direction:column;align-items:center}
+.digit-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.digit-btn{
+    width:40px;height:40px;border-radius:6px;border:1px solid #8BEP95;background:#black;font-weight:700;cursor:pointer;
+}
+.digit-btn.active{outline:3px solid var(--accent);transform:translateY(-1px)}
+
+#board-wrap{display:flex;justify-content:center;margin:12px 0}
+#board{
+    display:grid;
+    grid-template-columns:repeat(9, var(--cell-size));
+    grid-template-rows:repeat(9, var(--cell-size));
+    gap:var(--gap);
+    background:#FCFFEB; /*for grid*/
+    padding:3px;
+    border-radius:2px;
+}
+
+.cell{
+    width:var(--cell-size);
+    height:var(--cell-size);
+    background:var(--cell-bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    cursor:pointer;
+    user-select:none;
+    position:relative;
+    border:2px solid #7A7676;
+}
+
+.cell.prefilled{
+    background:#9EADA0;
+    font-weight:700;
+    color:#000000;
+    cursor:default;
+}
+.cell.selected{outline:3px solid rgba(43,122,120,.14)}
+.cell.invalid{background:#ffded6}
+
+.small-pot{
+    position:absolute;
+    inset:4px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    gap:1px;
+    font-size:9.5px;
+    color:#666;
+    align-items:center;
+    justify-items:center;
+}
+
+.controls-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+#status {
+    margin-top: 8px;
+    text-align: center;
+}
+
+#message {
+    min-height: 18px;
+    color: #DB423B;
+    font-weight: 600;
+}
+
+#hint {
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+}
+
+/* Thick 3x3 borders */
+.cell:nth-child(3n) {
+    border-right: var(--border-thick) solid #bbb;
+}
+
+.cell:nth-child(n + 19):nth-child(-n + 27), /* second block row */
+.cell:nth-child(n + 46):nth-child(-n + 54) { /* third block row */
+    /* handled by board gap & board padding—leave mostly default */
+}
+
+/* clean mobile spacing */
+@media (max-width: 520px) {
+    :root {
+        --cell-size: 38px;
+    }
+    .digit-btn {
+        width: 34px;
+        height: 34px;
+    }
+}
+
