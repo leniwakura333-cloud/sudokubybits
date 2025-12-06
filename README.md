@@ -21,9 +21,9 @@ Option 2: Run on JSFiddle
 
 Option 3: Run Locally on Your Computer 
   1.   Place your files in a folder. 
-     index.html
-	 style.css
-	 script.js
+		- index.html
+		- style.css
+		- script.js
   2. Make sure your index.html contains the links:
      <link rel="stylesheet" href="style.css">
 	 <script src="script.js" defer></script>
