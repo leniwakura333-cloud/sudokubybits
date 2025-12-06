@@ -9,13 +9,13 @@ Option 1: Run on CodePen
 		- HTML code into the HTML panel
 		- CSS code into the CSS panel
 		- JavaScript code into the JS panel
-	4. Hit Run or refresh the preview, the Sudoku app should appear.
+  4. Hit Run or refresh the preview, the Sudoku app should appear.
 
 Option 2: Run on JSFiddle
 	1. Go to https://jsfiddle.net/
-  2. Paste:
+	2. Paste:
 		- HTML into HTML panel
-    - CSS into CSS panel
+		- CSS into CSS panel
 		- JavaScript into JavaScript panel
 	3. Click Run.
 	4. The Sudoku app will load in the preview area.
